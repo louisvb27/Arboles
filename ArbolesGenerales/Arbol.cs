@@ -36,5 +36,27 @@
                 return nodoActual.Hermano;
             }
         }
+
+        private void Recorrer(Nodo nodo, ref int posicion, ref string datos)
+        {
+            if (nodo != null)
+            {
+                string dato = nodo.Valor;
+                int cantidadGuiones = dato.Length + posicion;
+                string datoConguiones = dato.PadLeft(cantidadGuiones, '-');
+
+                if (nodo.Hijo != null)
+                {
+                    posicion++;
+                    Recorrer(nodo.Hijo, ref posicion, ref datos);
+                    posicion--;
+                }
+
+                if (nodo.Hermano != null && posicion != 0)
+                {
+                    Recorrer(nodo.Hermano, ref posicion, ref datos);
+                }
+            }
+        }
     }
 }
