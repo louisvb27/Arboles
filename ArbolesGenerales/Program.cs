@@ -21,6 +21,8 @@
             Nodo nodoD = arbol.Agregar(valor: "D", nodoPadre: nodoB);
             Nodo nodoI = arbol.Agregar(valor: "I", nodoPadre: nodoD);
 
+            string datosArbol = arbol.ObtenerDatos();
+            Console.WriteLine(datosArbol);
         }
     }
 }

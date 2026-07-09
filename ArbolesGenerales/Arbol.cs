@@ -44,6 +44,7 @@
                 string dato = nodo.Valor;
                 int cantidadGuiones = dato.Length + posicion;
                 string datoConguiones = dato.PadLeft(cantidadGuiones, '-');
+                datos += datoConguiones + Environment.NewLine;
 
                 if (nodo.Hijo != null)
                 {
@@ -57,6 +58,14 @@
                     Recorrer(nodo.Hermano, ref posicion, ref datos);
                 }
             }
+        }
+
+        public string ObtenerDatos()
+        {
+            int posicion = 0;
+            string datos = string.Empty;
+            Recorrer(Raiz, ref posicion, ref datos);
+            return datos;
         }
     }
 }
