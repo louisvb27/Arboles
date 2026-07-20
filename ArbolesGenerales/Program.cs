@@ -23,6 +23,8 @@
 
             string datosArbol = arbol.ObtenerDatos();
             Console.WriteLine(datosArbol);
+
+            Console.ReadKey();
         }
     }
 }
