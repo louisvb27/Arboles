@@ -15,14 +15,19 @@ internal class ArbolBinarioDeBusqueda
         InOrden,
         PostOrden
     }
-
-    public void Insertar(int valor, Nodo? nodo = null)
+    public void Insertar(int valor)
     {
-        if (nodo == null)
+        Insertar(valor, Raiz);
+    }
+    public void Insertar(int[] valores)
+    {
+        foreach (int valor in valores)
         {
-            nodo = Raiz;
+            Insertar(valor, Raiz);
         }
-
+    }
+    private void Insertar(int valor, Nodo? nodo)
+    {
         if (valor > nodo!.Valor)
         {
             if (nodo.Derecho == null)
@@ -114,13 +119,13 @@ internal class ArbolBinarioDeBusqueda
 
             if (nodo.Izquierdo != null)
             {
-                RecorridoInorden(nodo.Izquierdo, ref datos);
+                RecorridoPreorden(nodo.Izquierdo, ref datos);
             }
 
 
             if (nodo.Derecho != null)
             {
-                RecorridoInorden(nodo.Derecho, ref datos);
+                RecorridoPreorden(nodo.Derecho, ref datos);
             }
 
         }
@@ -133,13 +138,13 @@ internal class ArbolBinarioDeBusqueda
         {
             if (nodo.Izquierdo != null)
             {
-                RecorridoInorden(nodo.Izquierdo, ref datos);
+                RecorridoPosorden(nodo.Izquierdo, ref datos);
             }
 
 
             if (nodo.Derecho != null)
             {
-                RecorridoInorden(nodo.Derecho, ref datos);
+                RecorridoPosorden(nodo.Derecho, ref datos);
             }
             
             Seleccionar(nodo, ref datos);

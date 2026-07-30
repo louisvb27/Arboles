@@ -8,10 +8,7 @@
             //string datos = arbol.ObtenerDatos();
             //Console.WriteLine(datos);
 
-            arbol.Insertar(5);
-            arbol.Insertar(15);
-            arbol.Insertar(9);
-            arbol.Insertar(3);
+            arbol.Insertar([5, 10, 3, 9, 15, 27, 12, 23]);
             //Console.WriteLine(arbol.ObtenerDatos());
             Console.WriteLine(arbol.ObtenerDatos(ArbolBinarioDeBusqueda.Recorrido.PreOrden));
             Console.WriteLine(arbol.ObtenerDatos(ArbolBinarioDeBusqueda.Recorrido.InOrden));
